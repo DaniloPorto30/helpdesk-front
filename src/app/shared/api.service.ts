@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
 import { Observable } from 'rxjs';
 import { Chamado, Cliente, Tecnico, Login } from '../core/models/help.model';
+import { API_CONFIG } from './config/api.config';
 
 
 @Injectable({
@@ -17,16 +18,16 @@ export class ApiService {
    }
 
    /*Tecnico Service */
-   addTecnico(tec : Tecnico): Observable<Tecnico> {
-    return this.http.post<Tecnico>(environment.addtURL,tec);
+   addTecnico(addTecnico : Tecnico): Observable<Tecnico> {
+    return this.http.post<Tecnico>(`${API_CONFIG.baseUrl}/tec/`,addTecnico);
   }
 
-  getAllTecnico(): Observable<Tecnico[]>{
-    return this.http.get<Tecnico[]>(environment.gettURL);
+  getAllTecnico(getAll : Tecnico): Observable<Tecnico[]>{
+    return this.http.get<Tecnico[]>(`${API_CONFIG.baseUrl}/tec/`,);
   }
 
-  updateTecnico(tec :Tecnico) : Observable<Tecnico>{
-    return this.http.put<Tecnico>(environment.updattUrl, tec);
+  updateTecnico(updateTecnico :Tecnico) : Observable<Tecnico>{
+    return this.http.put<Tecnico>(`${API_CONFIG.baseUrl}/tec/${updateTecnico.id}`,updateTecnico);
   }
 
   deleteTecnico(tec : Tecnico) : Observable<Tecnico> {
@@ -35,16 +36,16 @@ export class ApiService {
 
 
 /*Cliente Service */
-  addCliente(cli : Cliente): Observable<Cliente> {
-   return this.http.post<Cliente>(environment.addcURL, cli);
+  addCliente(addCliente : Cliente): Observable<Cliente> {
+   return this.http.post<Cliente>(`${API_CONFIG.baseUrl}/cha/`,addCliente);
  }
 
  getAllCliente(): Observable<Cliente[]>{
    return this.http.get<Cliente[]>(environment.getcURL);
  }
 
- updateCliente(cli :Cliente) : Observable<Cliente>{
-   return this.http.put<Cliente>(environment.updatecUrl, cli);
+ updateCliente(updateCliente :Cliente) : Observable<Cliente>{
+   return this.http.put<Cliente>(`${API_CONFIG.baseUrl}/cli/${updateCliente.id}`,updateCliente);
  }
 
  deleteCliente(cli : Cliente) : Observable<Cliente> {
@@ -54,16 +55,16 @@ export class ApiService {
 
 
 /*Chamado Service */
- addChamado(cha : Chamado): Observable<Chamado> {
-   return this.http.post<Chamado>(environment.addchURL,cha);
+ addChamado(addChamado : Chamado): Observable<Chamado> {
+   return this.http.post<Chamado>(`${API_CONFIG.baseUrl}/cha`,addChamado);
  }
 
  getAllChamado(): Observable<Chamado[]>{
    return this.http.get<Chamado[]>(environment.getchURL);
  }
 
- updateChamado(cha :Chamado) : Observable<Chamado>{
-   return this.http.put<Chamado>(environment.updatechUrl, cha);
+ updateChamado(updateChamado :Chamado) : Observable<Chamado>{
+   return this.http.put<Chamado>(`${API_CONFIG.baseUrl}/cli/${updateChamado.id}`,updateChamado);
  }
 
  deleteChamado(cha : Chamado) : Observable<Chamado> {
@@ -75,8 +76,8 @@ export class ApiService {
     return this.http.get<Login[]>(environment.getlURL);
   }
 
-  addsignUp(log: Login): Observable<Login> {
-    return this.http.post<Login>(environment.addlURL,log);
+  addsignUp(addLogin: Login): Observable<Login> {
+    return this.http.post<Login>(`${API_CONFIG.baseUrl}/log`,addLogin);
   }
 }
 
