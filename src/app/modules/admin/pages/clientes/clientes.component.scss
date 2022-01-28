@@ -1,0 +1,89 @@
+.tr i{
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 45px;
+  color: green;
+ }
+ .tr i:hover
+{
+color: blue;
+font-size: 47px;
+}
+ .tr h2{
+   margin-top: 20px;
+   margin-left: 30px ;
+ }
+ .tr{
+   display: flex;
+   justify-content:space-between;
+ }
+ #imgBanner{
+   width: auto;
+   margin-left: 300px;
+   margin-top: -110px;
+ }
+ .container-fluid {
+   width: auto;
+   margin-left: 300px;
+ }
+ .container-fluid .card-body {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .modal{
+   margin-left:30%;
+ }
+ .clientes-grid {
+   display: grid;
+   grid-gap: 16px;
+   padding: 12px;
+   grid-template-columns: auto auto auto auto;
+ }
+ .clientes-grid .box {
+  width: 295px;
+  height: auto;
+  box-shadow: 0 0 5px #f4f4f4;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.726);
+  position: relative;
+  transition: 0.1s;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+ .clientes-grid .info {
+   width: 265px;
+   bottom: 0px;
+   padding-top: 1px;
+   height: auto;
+ }
+ .clientes-grid .image {
+   margin: auto;
+   width: 90%;
+   border-radius: 5px;
+   margin-top: 25px;
+ }
+
+ .d-flex #footer1 {
+   margin-bottom: 0px;
+   margin-right: 32px;
+ }
+ .d-flex{
+   justify-content: center;
+   margin-bottom:20px ;
+ }
+.image img{
+  width:auto;
+  height:200px;
+}
+.clientes-grid .box:hover {
+  position: static;
+  transform: scale(1.0);
+  transition: 0s;
+  border: 3px solid rgba(156, 171, 238, 0.883);
+}
+

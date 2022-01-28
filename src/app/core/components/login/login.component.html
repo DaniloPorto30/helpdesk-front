@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="text-center">
+            <h1>Login</h1>
+            <h5>Faça o seu login!</h5><hr>
+          </div>
+          <form  [formGroup]="loginForm" (ngSubmit)="getlogIn()">
+            <div id="imgLogin" class="col-sm-4">
+              <img src="/assets/img/login.svg" style=" height: 200px;" alt="">
+            </div>
+            <div class="form-floating">
+              <input type="email" class="form-control" formControlName="email"
+              name="email"id="floatingInput" placeholder="Email">
+              <label for="floatingInput">E-mail</label>
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" formControlName="senha"
+              name="senha" id="floatingPassword" placeholder="Senha">
+              <label for="floatingPassword">Senha</label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Entrar</button>
+          </form>
+         <hr>
+         <a routerLink="/signup"> Novo Usuário? Click para criar conta!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

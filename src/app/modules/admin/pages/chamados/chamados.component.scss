@@ -1,0 +1,31 @@
+.tr{
+  display: flex;
+  justify-content:space-between;
+
+}
+#imgBanner{
+  width: auto;
+  margin-left: 300px;
+  margin-top: -60px;
+
+}
+.container-fluid {
+  width: auto;
+  margin-left: 300px;
+}
+.tr i{
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 45px;
+  color: green;
+ }
+ .tr i:hover
+{
+color: blue;
+font-size: 47px;
+}
+ .tr h2
+ {
+   margin-top: 20px;
+   margin-left: 30px ;
+ }

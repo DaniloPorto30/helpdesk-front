@@ -1,0 +1,145 @@
+<app-sidebar></app-sidebar>
+<div class="container-fluid">
+  <div class="tr">
+    <h2>Chamados App</h2>
+    <i (click)="clickAddChamados()" class="fas fa-plus-circle" data-bs-toggle="modal" data-bs-target="#addChamado"></i>
+  </div>
+  <div id="imgBanner" class="col-md-3">
+    <img src="{{chamados}}" style=" height: 200px;" alt="">
+  </div>
+  <div class="input-group mb-3">
+    <input type="file" class="form-control" id="inputGroupFile02">
+  </div>
+  <p>Hora do cadastro: {{today | date:'dd-MM-yyyy, hh:mm:ss'}}</p>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Chamado ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Cpf</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Endereco</th>
+        <th scope="col">Image</th>
+        <th scope="col">Problema</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of empListch">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.cpf}}</td>
+        <td>{{item.mobile}}</td>
+        <td>{{item.endereco}}</td>
+        <td><img style="height: 120px;" [src]="item.image" alt="image"></td>
+        <td>{{item.descricao}}</td>
+        <td>
+            <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#editChamado" (click)="editeChamado(item)">Edit</button>
+            <button type="button" class="btn btn-outline-danger" (click)="deleteChamado(item)">Finalizar</button>
+            <button type="button" class="btn btn-outline-success" >Descrição</button>
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+
+<!-- Add Chamado modal -->
+<div class="modal fade" id="addChamado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Novo Chamado</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+
+        <form [formGroup]="empDetailch">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name </label>
+                <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp">
+              </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email </label>
+              <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">CPF </label>
+              <input type="email" formControlName="cpf" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Telefone </label>
+                <input type="text" formControlName="mobile" class="form-control" id="email" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Endereço </label>
+                <input type="text" formControlName="endereco" class="form-control" id="email" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Imagem </label>
+                <input type="text" formControlName="image" class="form-control" id="email" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Descrição </label>
+                <input type="text" formControlName="descricao" class="form-control" id="email" aria-describedby="emailHelp">
+              </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addChamado()">Add Chamado</button>
+              </div>
+          </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Edit Chamado modal -->
+<div class="modal fade" id="editChamado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Editar Chamado</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="empDetailch">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name </label>
+                <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp">
+              </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email </label>
+              <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">CPF </label>
+              <input type="email" formControlName="cpf" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Telefone </label>
+              <input type="text" formControlName="mobile" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Endereço </label>
+              <input type="text" formControlName="endereco" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Imagem </label>
+              <input type="text" formControlName="image" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Descricao </label>
+                <input type="text" formControlName="descricao" class="form-control" id="email" aria-describedby="emailHelp">
+              </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-success" (click)="updateChamado()" data-bs-dismiss="modal">Update </button>
+              </div>
+          </form>
+    </div>
+  </div>
+</div>
+</div>

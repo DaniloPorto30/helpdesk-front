@@ -1,0 +1,65 @@
+.container .card{
+  text-decoration: none;
+  margin-top: 75px;
+  border: 1px  solid blue;
+  width: auto;
+  padding: 45px;
+  background-color: aqua;
+  left: 105%;
+  border-radius: 20px ;
+}
+.container .card a{
+  color: blue;
+}
+.container input{
+  margin-top:10px ;
+}
+.container img{
+padding-bottom: 30px;
+margin: 0 auto;
+}
+#floatingPassword,#floatingInput{
+  height:50px;
+}
+.container-fluid{
+  background-color: rgb(6, 79, 161);
+  height:789px;
+}
+
+@media screen and (max-width: 375px) {
+  .container img{
+ margin:auto;
+    }
+    .container .card{
+      margin-top: 15px;
+      padding: 15px;
+      left: 0%;
+      width: auto;
+    }
+}
+
+@media screen and (max-width: 414px) {
+  .container img{
+ margin-left: auto;
+    }
+    .container .card{
+      margin-top: 40px;
+      padding: 15px;
+      left: 0%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+  .container img{
+ margin-left: -2px;
+    }
+    .container .card{
+      margin-top: 12px;
+      padding: 10px;
+      left: 0%;
+    }
+   .card a{
+      font-size: 14px;
+      padding-top: -10px;
+    }
+}

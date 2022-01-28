@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="text-center">
+            <h5>Criar conta.</h5><hr>
+          </div>
+          <form  [formGroup]="loginForm" (ngSubmit)=" addsignUp()">
+            <div id="imgLogin" class="col-sm-4">
+              <img src="{{signup}}" style=" height: 200px;" alt="">
+            </div>
+            <div class="form-floating">
+              <input type="name" class="form-control" formControlName="name"
+              name="name"id="floatingInput" placeholder="Nome">
+              <label for="floatingInput">Nome</label>
+            </div>
+            <div class="form-floating">
+              <input type="email" class="form-control" formControlName="email"
+              name="email"id="floatingInput" placeholder="Email">
+              <label for="floatingInput">E-mail</label>
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" formControlName="senha"
+              name="senha" id="floatingPassword" placeholder="Senha">
+              <label for="floatingPassword">Senha</label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Entrar</button>
+          </form>
+         <hr>
+         <a class="newsignup" routerLink="/login">Já possuo uma conta! Click Aqui!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,166 @@
+<app-sidebar></app-sidebar>
+<!--tabela aqui-->
+<div class="container-fluid">
+<div class="tr">
+  <h2>Técnicos App</h2>
+  <i class="btn btn-success" (click)="clickAddtecnicos()" type="submit" class="fas fa-plus-circle" data-bs-toggle="modal" data-bs-target="#addTecnico"></i>
+</div>
+<input  class="form-control mt-3" style="width:285px;" type="text"  name="search" placeholder="Pesquisar" [(ngModel)]="searchText" autocomplete="off">
+<div id="imgBanner" class="col-md-3">
+  <img src="{{tecnicos}}" style=" height: 145px; margin-bottom: -30px;" alt="tecnicos-banner">
+</div>
+<div class="container mt-4">
+  <div class="tecnicos-grid">
+    <div class="box"
+    *ngFor="let item of empListt| filter:searchText |  paginate: { itemsPerPage: 4, currentPage: p }">
+    <div class="image">
+      <img [src]="item.image" alt="image">
+      <a style="font-size:28px ;margin-left: 2px; position: absolute;">
+   </a>
+      <div class="info">
+        <p><b>Nome:</b>&nbsp;&nbsp;{{item.name}}</p>
+        <p><b>CPF:</b>&nbsp;&nbsp;{{item.cpf}}</p>
+        <p><b>Email:</b><br>{{item.email}}</p>
+        <p><b>Telefone:</b>&nbsp;&nbsp;{{item.mobile}}</p>
+
+        <div class="d-flex">
+             <button (click)="editeTecnico(item)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editeTecnico">Editar</button>&nbsp;
+             <button (click)=" deleteTecnico(item)" class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
+
+<!-- addTecnico Modal -->
+<div class="modal fade" id="addTecnico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Novo Tecnico</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="empDetailt">
+          <div class="mb-1">
+            <label for="exampleInputEmail1" class="form-label">Image</label>
+            <input type="text" formControlName="image" class="form-control" placeholder="image" id="exampleInputEmail1" aria-describedby="emailHelp"required>
+          </div>
+          <div class="mb-1">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" formControlName="name" class="form-control" placeholder="name" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;">
+            <label for="exampleInputPassword1" class="form-label">Email</label>
+            <input type="text" formControlName="email" class="form-control" placeholder="email" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;margin-left: 5px">
+            <label for="exampleInputPassword1" class="form-label">Senha</label>
+            <input type="text" formControlName="senha" class="form-control" placeholder="Senha" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1">
+            <label for="exampleInputPassword1" class="form-label">Endereço</label>
+            <input type="text" formControlName="endereco" class="form-control" placeholder="Endereço" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;" >
+            <label for="exampleInputPassword1" class="form-label">Telefone</label>
+            <input type="number" formControlName="mobile" class="form-control" placeholder="mobile" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;margin-left: 5px">
+            <label for="exampleInputPassword1" class="form-label">Salario</label>
+            <input type="number" formControlName="salary" class="form-control" placeholder="Salario" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;">
+            <label for="exampleInputPassword1" class="form-label">Idade</label>
+            <input type="number" formControlName="idade" class="form-control" placeholder="Idade" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left; margin-left: 5px">
+            <label for="exampleInputPassword1" class="form-label">CPF</label>
+            <input type="number" formControlName="cpf" class="form-control" placeholder="cpf" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;">
+            <label for="exampleInputPassword1" class="form-label">Cargo</label>
+            <input type="text" formControlName="service" class="form-control" placeholder="Cargo" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;margin-left: 5px">
+            <label for="exampleInputPassword1" class="form-label">Login</label>
+            <input type="text" formControlName="login" class="form-control" placeholder="Login" id="exampleInputPassword1"required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary"(click)="addTecnico()"data-bs-dismiss="modal">Adicionar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- editarTecnico Modal -->
+<div class="modal fade" id="editeTecnico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5  class="modal-title" id="exampleModalLabel">Editar Tecnico</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="empDetailt">
+          <div class="mb-1">
+            <label for="exampleInputEmail1" class="form-label">Image</label>
+            <input type="text" formControlName="image" class="form-control" placeholder="image" id="exampleInputEmail1" aria-describedby="emailHelp"required>
+          </div>
+          <div class="mb-1">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" formControlName="name" class="form-control" placeholder="name" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;">
+            <label for="exampleInputPassword1" class="form-label">Email</label>
+            <input type="text" formControlName="email" class="form-control" placeholder="email" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;margin-left: 5px">
+            <label for="exampleInputPassword1" class="form-label">Senha</label>
+            <input type="text" formControlName="senha" class="form-control" placeholder="senha" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1">
+            <label for="exampleInputPassword1" class="form-label">Endereço</label>
+            <input type="text" formControlName="endereco" class="form-control" placeholder="Endereço" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;">
+            <label for="exampleInputPassword1" class="form-label">Telefone</label>
+            <input type="number" formControlName="mobile" class="form-control" placeholder="mobile" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;margin-left: 5px">
+            <label for="exampleInputPassword1" class="form-label">Salario</label>
+            <input type="number" formControlName="salary" class="form-control" placeholder="salario" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;">
+            <label for="exampleInputPassword1" class="form-label">Idade</label>
+            <input type="number" formControlName="idade" class="form-control" placeholder="idade" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left; margin-left: 5px">
+            <label for="exampleInputPassword1" class="form-label">CPF</label>
+            <input type="number" formControlName="cpf" class="form-control" placeholder="cpf" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;">
+            <label for="exampleInputPassword1" class="form-label">Cargo</label>
+            <input type="text" formControlName="service" class="form-control" placeholder="cargo" id="exampleInputPassword1"required>
+          </div>
+          <div class="mb-1"style="width:230px; float: left;margin-left: 5px">
+            <label for="exampleInputPassword1" class="form-label">Login</label>
+            <input type="text" formControlName="login" class="form-control" placeholder="Login" id="exampleInputPassword1"required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+         <button type="button" class="btn btn-primary"(click)="updateTecnico()"data-bs-dismiss="modal">Atualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
