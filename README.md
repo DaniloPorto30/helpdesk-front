@@ -1,14 +1,15 @@
 # DashboardHelpDesk
-
 ----
-#Sistema de Help Desk!   
 
-Angular + Spring Boot 😉
+# Foi desenvolvido uma Aplicação utilizando a framework Angular para consumir uma Api.
 
+Angular version 12.2.13. e importado alguns Modulos :  
+
+ToastrModule, NgChartsModule, NgxPaginationModule, Ng2SearchPipeModule... 😉
 
 ![alt text](https://github.com/DaniloPorto30/helpdesk-front/blob/main/help-login.png?raw=true)
 ----
-![alt text](https://github.com/DaniloPorto30/helpdesk-front/blob/main/help-home.png?raw=true)
+![alt text](https://github.com/DaniloPorto30/helpdesk-front/blob/main/home.png?raw=true)
 ----
 ![alt text](https://github.com/DaniloPorto30/helpdesk-front/blob/main/help-chamados.png?raw=true)
 ----
