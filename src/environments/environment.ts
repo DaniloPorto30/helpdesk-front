@@ -5,23 +5,23 @@
 export const environment = {
   production: false,
 
-  addtURL : 'http://localhost:8081/tec/addTecnico',
-  gettURL : 'http://localhost:8081/tec/getAll',
-  updattUrl : 'http://localhost:8081/tec/updateTecnico',
-  delettUrl : 'http://localhost:8081/tec/deleteTecnicoById',
+  addtURL : 'https://myhelpdesk-api.herokuapp.com/tec/addTecnico',
+  gettURL : 'https://myhelpdesk-api.herokuapp.com/tec/getAll',
+  updattUrl : 'https://myhelpdesk-api.herokuapp.com/tec/updateTecnico',
+  delettUrl : 'https://myhelpdesk-api.herokuapp.com/tec/deleteTecnicoById',
 
-  addcURL : 'http://localhost:8081/cli/addCliente',
-  getcURL : 'http://localhost:8081/cli/getAll',
-   updatecUrl : 'http://localhost:8081/cli/updateCliente',
-   deletecUrl : 'http://localhost:8081/cli/deleteClienteById',
+  addcURL : 'https://myhelpdesk-api.herokuapp.com/cli/addCliente',
+  getcURL : 'https://myhelpdesk-api.herokuapp.com/cli/getAll',
+   updatecUrl : 'https://myhelpdesk-api.herokuapp.com/cli/updateCliente',
+   deletecUrl : 'https://myhelpdesk-api.herokuapp.com/cli/deleteClienteById',
 
-   addchURL : 'http://localhost:8081/cha/addChamado',
-   getchURL : 'http://localhost:8081/cha/getAll',
-   updatechUrl : 'http://localhost:8081/cha/updateChamado',
-   deletechUrl : 'http://localhost:8081/cha/deleteChamadoById',
+   addchURL : 'https://myhelpdesk-api.herokuapp.com/cha/addChamado',
+   getchURL : 'https://myhelpdesk-api.herokuapp.com/cha/getAll',
+   updatechUrl : 'https://myhelpdesk-api.herokuapp.com/cha/updateChamado',
+   deletechUrl : 'https://myhelpdesk-api.herokuapp.com/cha/deleteChamadoById',
 
-   getlURL:  'http://localhost:8081/log/getAll',
-   addlURL : 'http://localhost:8081/log/addLogin',
+   getlURL:  'https://myhelpdesk-api.herokuapp.com/log/getAll',
+   addlURL : 'https://myhelpdesk-api.herokuapp.com/log/addLogin',
 
   };
 
