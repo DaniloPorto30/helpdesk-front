@@ -70,7 +70,8 @@ export class ChamadosComponent implements OnInit {
   }
 
   getAllChamado() {
-    this.apiService.getAllChamado().subscribe(res=>{
+    this.apiService.getAllChamado().subscribe(
+      (res : Chamado[])=>{
         this.empListch = res;
     },err=>{
       console.log("error while fetching data.")

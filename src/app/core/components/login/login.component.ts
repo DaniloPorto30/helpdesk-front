@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
   })
   }
   getlogIn(){
-    this.api.getlogIn().subscribe(res=>{
+    this.api.getlogIn().subscribe(
+      (res : Login[])=>{
       const user = res.find((a:Login)=>{
         return a.email === this.loginForm.value.email && a.senha === this.loginForm.value.senha
       })

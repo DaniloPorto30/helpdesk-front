@@ -70,7 +70,8 @@ export class ClientesComponent implements OnInit {
   }
 
   getAllCliente() {
-    this.apiService.getAllCliente().subscribe(res=>{
+    this.apiService.getAllCliente().subscribe(
+      (res : Cliente[])=>{
         this.empListc = res;
     },err=>{
       console.log("error while fetching data.")

@@ -75,7 +75,8 @@ export class TecnicosComponent implements OnInit {
   }
 
   getAllTecnico() {
-    this.api.getAllTecnico().subscribe(res=>{
+    this.api.getAllTecnico().subscribe(
+      (res : Tecnico[])=>{
         this.empListt = res;
     },err=>{
       console.log("error while fetching data.")
