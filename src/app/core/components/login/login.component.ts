@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
      senha:['', Validators.required]
   })
   }
-
   getlogIn(){
     this.api.getlogIn().subscribe(res=>{
       const user = res.find((a:Login)=>{
