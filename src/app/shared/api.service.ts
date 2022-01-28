@@ -18,66 +18,66 @@ export class ApiService {
    }
 
    /*Tecnico Service */
-   addTecnico(addTecnico : Tecnico): Observable<Tecnico> {
-    return this.http.post<Tecnico>(`${API_CONFIG.baseUrl}/tec/`,addTecnico);
+   addTecnico(tec : Tecnico): Observable<Tecnico> {
+    return this.http.post<Tecnico>(API_CONFIG.addtURL,tec);
   }
 
-  getAllTecnico(getAll : Tecnico): Observable<Tecnico[]>{
-    return this.http.get<Tecnico[]>(`${API_CONFIG.baseUrl}/tec/`,);
+  getAllTecnico(): Observable<Tecnico[]>{
+    return this.http.get<Tecnico[]>(API_CONFIG.gettURL);
   }
 
-  updateTecnico(updateTecnico :Tecnico) : Observable<Tecnico>{
-    return this.http.put<Tecnico>(`${API_CONFIG.baseUrl}/tec/${updateTecnico.id}`,updateTecnico);
+  updateTecnico(tec :Tecnico) : Observable<Tecnico>{
+    return this.http.put<Tecnico>(API_CONFIG.updattUrl, tec);
   }
 
   deleteTecnico(tec : Tecnico) : Observable<Tecnico> {
-    return this.http.delete<Tecnico>(environment.delettUrl+'/'+tec.id);
+    return this.http.delete<Tecnico>(API_CONFIG.delettUrl+'/'+tec.id);
   }
 
 
 /*Cliente Service */
-  addCliente(addCliente : Cliente): Observable<Cliente> {
-   return this.http.post<Cliente>(`${API_CONFIG.baseUrl}/cha/`,addCliente);
+  addCliente(cli : Cliente): Observable<Cliente> {
+   return this.http.post<Cliente>(API_CONFIG.addcURL, cli);
  }
 
  getAllCliente(): Observable<Cliente[]>{
-   return this.http.get<Cliente[]>(environment.getcURL);
+   return this.http.get<Cliente[]>(API_CONFIG.getcURL);
  }
 
- updateCliente(updateCliente :Cliente) : Observable<Cliente>{
-   return this.http.put<Cliente>(`${API_CONFIG.baseUrl}/cli/${updateCliente.id}`,updateCliente);
+ updateCliente(cli :Cliente) : Observable<Cliente>{
+   return this.http.put<Cliente>(API_CONFIG.updatecUrl, cli);
  }
 
  deleteCliente(cli : Cliente) : Observable<Cliente> {
-   return this.http.delete<Cliente>(environment.deletecUrl+'/'+cli.id);
+   return this.http.delete<Cliente>(API_CONFIG.deletecUrl+'/'+cli.id);
  }
 
 
 
 /*Chamado Service */
- addChamado(addChamado : Chamado): Observable<Chamado> {
-   return this.http.post<Chamado>(`${API_CONFIG.baseUrl}/cha`,addChamado);
+ addChamado(cha : Chamado): Observable<Chamado> {
+   return this.http.post<Chamado>(API_CONFIG.addchURL,cha);
  }
 
  getAllChamado(): Observable<Chamado[]>{
-   return this.http.get<Chamado[]>(environment.getchURL);
+   return this.http.get<Chamado[]>(API_CONFIG.getchURL);
  }
 
- updateChamado(updateChamado :Chamado) : Observable<Chamado>{
-   return this.http.put<Chamado>(`${API_CONFIG.baseUrl}/cli/${updateChamado.id}`,updateChamado);
+ updateChamado(cha :Chamado) : Observable<Chamado>{
+   return this.http.put<Chamado>(API_CONFIG.updatechUrl, cha);
  }
 
  deleteChamado(cha : Chamado) : Observable<Chamado> {
-   return this.http.delete<Chamado>(environment.deletechUrl+'/'+cha.id);
+   return this.http.delete<Chamado>(API_CONFIG.deletechUrl+'/'+cha.id);
  }
 
   /*Login Service */
   getlogIn(): Observable<Login[]>{
-    return this.http.get<Login[]>(environment.getlURL);
+    return this.http.get<Login[]>(API_CONFIG.getlURL);
   }
 
-  addsignUp(addLogin: Login): Observable<Login> {
-    return this.http.post<Login>(`${API_CONFIG.baseUrl}/log`,addLogin);
+  addsignUp(log: Login): Observable<Login> {
+    return this.http.post<Login>(API_CONFIG.addlURL,log);
   }
 }
 
