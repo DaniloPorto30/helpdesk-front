@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         this.loginForm.reset();
       }
     },err=>{
-      this.toastr.error('Algo está errado novamente, do lado do servidor!');
+      this.toastr.error('Algo está errado, do lado do servidor!');
     }
     )
 
