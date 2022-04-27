@@ -1,29 +1,28 @@
-# DashboardHelpDesk
-----
+ <h1 align="center">
+Dashboard - Help Desk 
+</h1>
 
-# Foi desenvolvido uma Aplicação utilizando a framework Angular para consumir uma Api.
+<h1>
+ <img src="http://g.recordit.co/E2FA04mUak.gif">
+  </h1>
+  
+# Indice
 
-Angular version 12.2.13. e importado alguns Modulos :  
+-[Sobre](#sobre).<br>
+-[Tecnologias utilizadas](#tecnologias-utilizadas).<br>
+-[Development server](#development-server).
 
-ToastrModule, NgChartsModule, NgxPaginationModule, Ng2SearchPipeModule... 😉
+# Sobre
 
-![alt text](https://github.com/DaniloPorto30/helpdesk-front/blob/main/help-login.png?raw=true)
-----
-![alt text](https://github.com/DaniloPorto30/helpdesk-front/blob/main/home.png?raw=true)
-----
-![alt text](https://github.com/DaniloPorto30/helpdesk-front/blob/main/help-chamados.png?raw=true)
-----
-![alt text](https://github.com/DaniloPorto30/helpdesk-front/blob/main/help-clientes.png?raw=true)
-----
-![alt text](https://github.com/DaniloPorto30/helpdesk-front/blob/main/help-tecnicos.png?raw=true)
-----
-![alt text](https://github.com/DaniloPorto30/helpdesk-front/blob/main/help-graficos.png?raw=true)
-----
+O projeto Dashboard é um projeto pessoal, com o intuito de colocarmos em prática conceitos do Angular e consumir uma API em Spring Boot Java.
+- [Link API](https://github.com/DaniloPorto30/helpdesk-api) Java version 11.
 
+## Tecnologias utilizadas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
-
-## Development server
+- [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
+- Type Script
+- HTML5
+- CSS
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
